@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> bdf2095 (att segurança)
+>>>>>>> 151fed0 (alterações feitas)
 import requests
 import uuid
 from telegram import Update
@@ -8,18 +15,24 @@ from datetime import datetime
 
 idempotency_key = str(uuid.uuid4())
 
+<<<<<<< HEAD
 # 🔐 Suas credenciais
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 ACCESS_TOKEN_MP = os.getenv("ACCESS_TOKEN_MP")
+=======
+<<<<<<< HEAD
+TELEGRAM_TOKEN = "8090506199:AAFtcLML6n18k_GuLgjI_W1i9Cx241-Lvj4"
+ACCESS_TOKEN_MP = "APP_USR-8447337980819064-090921-cb0b31ffe7d3f74fb1c9f82d2fc08392-388306825"
+=======
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+ACCESS_TOKEN_MP = os.getenv("ACCESS_TOKEN_MP")
+>>>>>>> bdf2095 (att segurança)
+>>>>>>> 151fed0 (alterações feitas)
 
-# Link do grupo VIP
 GRUPO_VIP_LINK = 'https://t.me/+yy-y1Y9lc54wZGMx'
 
-# Armazena pagamentos pendentes
 pagamentos_pendentes = {}
 
-
-# Comando /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user = update.effective_user
     await update.message.reply_text(
@@ -29,7 +42,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Após o pagamento, digite ou click em /verificar para obter o link de acesso vip!"
     )
 
-    # Gera cobrança Pix
     payload = {
         "transaction_amount": 15.00,
         "description": "Acesso ao grupo VIP",
@@ -69,7 +81,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         print("Exceção:", e)
 
 
-# Comando /verificar
 async def verificar(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
 
@@ -124,10 +135,14 @@ async def validade(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text("⚠️ Seu acesso VIP expirou. Faça um novo pagamento para continuar.")
 
-
-# Inicializa o bot
 app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("verificar", verificar))
 app.add_handler(CommandHandler("validade", validade))
+HEAD
 app.run_polling()
+HEAD
+app.run_polling()
+app.run_polling()
+bdf2095 (att segurança)
+151fed0 (alterações feitas)
