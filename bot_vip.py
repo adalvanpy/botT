@@ -6,6 +6,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import os
 import json
 from datetime import datetime
+from dotenv import load_dotenv
+load_dotenv()
 
 idempotency_key = str(uuid.uuid4())
 
@@ -13,7 +15,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 ACCESS_TOKEN_MP = os.getenv("ACCESS_TOKEN_MP")
 
 
-GRUPO_VIP_LINK = 'https://t.me/+yy-y1Y9lc54wZGMx'
+GRUPO_VIP_LINK = os.getenv("GRUPO_VIP_LINK")
 
 pagamentos_pendentes = {}
 
